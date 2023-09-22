@@ -1,26 +1,19 @@
-package arthur.saito.newreviewsada.client;
+package arthur.saito.newreviewsada.user;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.*;
 
-import java.time.LocalDate;
 import java.util.UUID;
 
-@Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
-public class Client {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long _id;
     private UUID _uuid;
-    private String _name;
+    @Column(unique = true)
     private String _email;
-    private LocalDate _dayOfBirth;
+    @Column(unique = true)
+    private String _login;
 }
