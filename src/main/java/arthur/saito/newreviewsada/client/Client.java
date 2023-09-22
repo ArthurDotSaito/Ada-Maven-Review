@@ -1,9 +1,7 @@
 package arthur.saito.newreviewsada.client;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import arthur.saito.newreviewsada.user.User;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -23,4 +21,10 @@ public class Client {
     private String _name;
     private String _email;
     private LocalDate _dayOfBirth;
+
+    @ToString.Exclude
+    @OneToOne(orphanRemoval = true)
+    @JoinColumn(name = "user__id")
+    private User user;
+
 }
