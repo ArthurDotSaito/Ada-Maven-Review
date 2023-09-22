@@ -1,5 +1,6 @@
 package arthur.saito.newreviewsada.client;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,6 +15,7 @@ public class ClientController {
         this.service = service;
     }
 
+    @GetMapping
      public List<Client> listAll(){
         return this.service.listAll();
      }
