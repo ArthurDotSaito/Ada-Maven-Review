@@ -22,7 +22,7 @@ public class ClientController {
      public List<Client> listAll(){
         return this.service.listAll();
      }
-]
+
     @GetMapping("/{uuid}")
      public Optional<ClientDTO> findById(@PathVariable  UUID uuid){
         return this.service.findById(uuid);
