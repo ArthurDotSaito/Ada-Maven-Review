@@ -19,6 +19,7 @@ public class Client {
     private Long _id;
     private UUID _uuid;
     private String _name;
+    @Column(unique = true)
     private String _email;
     private LocalDate _dayOfBirth;
 
