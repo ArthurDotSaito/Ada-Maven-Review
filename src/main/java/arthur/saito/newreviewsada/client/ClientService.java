@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class ClientService {
@@ -22,7 +23,7 @@ public class ClientService {
     public List<Client> listAll(){
         return this.repository.findAll();
     }
-    public Optional<ClientDTO> findById(Long uuid){
+    public Optional<ClientDTO> findById(UUID uuid){
         return this.repository.findById(uuid).map(this::convertToDto);
     }
 
